@@ -1,0 +1,20 @@
+Guía de Ejecución y Flujo de Trabajo
+Paso 1: Escaneo de Medios
+El programa inicia ejecutando Directory.GetFiles. Si la carpeta está vacía, el proceso termina inmediatamente con un mensaje de error en consola para evitar el levantamiento innecesario del navegador.
+
+Paso 2: Orquestación del Navegador
+Se instancian las ChromeOptions. Es crucial el argumento --user-data-dir, ya que esto permite al bot saltarse el 2FA (Autenticación de dos pasos) al reconocer el dispositivo como "conocido".
+
+Paso 3: Proceso de Publicación (Loop)
+Por cada video encontrado, el bot realiza:
+
+Navigate().GoToUrl: Carga la página principal.
+
+SendKeys(video): Sube el archivo al input de tipo file.
+
+ClickBoton(...): Función personalizada que busca elementos por texto en español e inglés para mayor compatibilidad.
+
+txtCaption.SendKeys: Inserta el bloque de hashtags predefinido.
+
+Paso 4: Confirmación y Cierre
+El bot entra en un bucle while(!publicado) que interroga al DOM cada segundo buscando el mensaje de "Se ha compartido tu reel". Solo tras confirmar el éxito, procede al siguiente video.

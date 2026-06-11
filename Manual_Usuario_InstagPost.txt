@@ -1,0 +1,28 @@
+Manual de Usuario - InstagPost Robot
+1. Requisitos del Sistema
+Sistema Operativo: Windows 10 o superior.
+
+Navegador: Google Chrome actualizado.
+
+Carpeta con videos en formato .MP4.
+
+2. Preparación de la Cuenta
+Para que el robot funcione sin pedir contraseña, debe existir un perfil de Chrome donde la sesión de Instagram ya esté iniciada.
+
+Abra Chrome y cree un perfil (ej: "Perfil 3").
+
+Entre a [www.instagram.com](https://www.instagram.com) e inicie sesión.
+
+Cierre Chrome completamente antes de lanzar el robot.
+
+3. Configuración de Rutas
+Dentro del archivo Program.cs, localice y modifique:
+
+miRutaVideos: Escriba la dirección donde están sus videos.
+
+miPerfilChrome: Escriba la ruta de su carpeta "User Data" de Chrome.
+
+4. Solución de Problemas
+Error "Session not created": Actualice su ChromeDriver a la versión de su navegador.
+
+El bot no encuentra el botón: Instagram cambia sus códigos frecuentemente; verifique que la interfaz de Instagram esté en el idioma configurado (Español/Inglés).
